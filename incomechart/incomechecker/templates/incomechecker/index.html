@@ -1,0 +1,35 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Charts</title>
+   <script type="text/javascript" src="//cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+   <script type="text/javascript" src="//cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+    <script>
+        updateData = function () {
+           var value = document.getElementById("dial-val").value;
+           FusionCharts("ex1").setDataForId("dial1", value);
+       }
+    </script>
+     <style type="text/css">
+        g[class$='creditgroup'] {
+             display:none !important;
+        }
+      
+    </style>
+</head>
+<h1>Monthly Delivery Stats</h1>
+<body style="font-family:'Helvetica Neue', Arial; font-size: 16px; max-width: 500px;
+margin: auto;" >
+    <h3>{{ chartTitle|safe }}</h3>
+    <div id="chart-1">{{ output|safe }}</div>
+    <br/>
+    <p>The Chart shows a breakdown of working with food delivery services like door dash and others in the Austin Texas area.</p>
+    <p>The data shows if your earnings are going up or down so that the user can see a visual of the results.</p>
+ 
+   
+    
+</body>
+</html>
